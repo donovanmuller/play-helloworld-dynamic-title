@@ -1,0 +1,22 @@
+@(personForm: Form[Person])
+
+@import helper._
+
+@main(personForm("name").value.get match {  case name:String => name case _ => "New Person" }) {
+
+    <h1>New/Edit Person @personForm("name").value.getOrElse("WTF")</h1>
+
+    @form(action = routes.Persons.editPerson) {
+
+        @inputText(
+            field = personForm("name"),
+            args = '_label -> "What is the person name?", 'placeholder -> "Bob"
+        )
+
+        <p class="buttons">
+            <input type="submit" id="submit">
+        <p>
+
+    }
+
+}

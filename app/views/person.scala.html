@@ -1,0 +1,12 @@
+@(person: Person)
+
+@main(person.name) {
+
+    <h1>Say hello to @person.name</h1>
+
+    <p class="buttons">
+        <a href="@routes.Persons.index(person.name)">Edit @person.name</a>
+        <a href="@routes.Persons.index(null)">Reset</a>
+    <p>
+}
+`
