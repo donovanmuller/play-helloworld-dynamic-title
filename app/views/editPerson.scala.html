@@ -4,7 +4,7 @@
 
 @main(personForm("name").value.get match {  case name:String => name case _ => "New Person" }) {
 
-    <h1>New/Edit Person @personForm("name").value.getOrElse("WTF")</h1>
+    <h1>New/Edit Person</h1>
 
     @form(action = routes.Persons.editPerson) {
 
